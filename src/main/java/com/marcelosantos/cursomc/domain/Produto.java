@@ -2,7 +2,9 @@ package com.marcelosantos.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -22,7 +25,7 @@ public class Produto  implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private Double preço;
+	private Double preço;	
 	
 	@JsonBackReference // DO outro lado da associação ja foram buscados os objetos entao desse lado não sera buscado mais
 	@ManyToMany
@@ -30,9 +33,21 @@ public class Produto  implements Serializable{
 		joinColumns = @JoinColumn(name = "produto_id"),
 		inverseJoinColumns = @JoinColumn(name = "categoria_id")			
 	)
-	private List<Categoria> categorias = new ArrayList<>();
+	
+	private List<Categoria> categorias = new ArrayList<>();		
+	
+	@OneToMany(mappedBy = "id.produto")
+	private Set<ItemPedido> itens = new HashSet<>();	
 	
 	public Produto() {		
+	}
+	
+	public List<Pedido> getPedidos() { // um Produto conhece os pedidos dele por isso foi criado o getPedido para varrer a lista de ItemPedido, montando uma lista de pedido associados a esses itens 
+		List<Pedido> lista = new ArrayList<>();
+		for (ItemPedido x : itens) {
+			lista.add(x.getPedido());
+		}
+		return lista;
 	}
 
 	public Produto(Integer id, String nome, Double preço) {
@@ -73,6 +88,14 @@ public class Produto  implements Serializable{
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
+	
+	public Set<ItemPedido> getItens() {
+		return itens;
+	}
+
+	public void setItens(Set<ItemPedido> itens) {
+		this.itens = itens;
+	}
 
 	@Override
 	public int hashCode() {
@@ -98,5 +121,4 @@ public class Produto  implements Serializable{
 			return false;
 		return true;
 	}	
-	
 }
