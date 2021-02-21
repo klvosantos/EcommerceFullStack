@@ -63,7 +63,7 @@ public class ClienteService {
 		newObj.setEmail(obj.getEmail());
 		
 		// newObj tem os dados buscados do banco
-		// obj contem os dados que serão atualizados
+		// obj contem os dados que vieram  na requisição
 		// É feito a transferencia dos dados que serão atualizados do obj para o newObj	e salvo novamente no banco.
 	}
 
