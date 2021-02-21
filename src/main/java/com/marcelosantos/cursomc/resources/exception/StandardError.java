@@ -8,12 +8,12 @@ public class StandardError implements Serializable{
 	
 	private Integer status;
 	private String msg;
-	private Long TimeStamp;
+	private Long timeStamp;
 	public StandardError(Integer status, String msg, Long timeStamp) {
 		super();
 		this.status = status;
 		this.msg = msg;
-		TimeStamp = timeStamp;
+		this.timeStamp = timeStamp;
 	}
 	public Integer getStatus() {
 		return status;
@@ -28,10 +28,10 @@ public class StandardError implements Serializable{
 		this.msg = msg;
 	}
 	public Long getTimeStamp() {
-		return TimeStamp;
+		return timeStamp;
 	}
 	public void setTimeStamp(Long timeStamp) {
-		TimeStamp = timeStamp;
+		this.timeStamp = timeStamp;
 	}
 	
 	
