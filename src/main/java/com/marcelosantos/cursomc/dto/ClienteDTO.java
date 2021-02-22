@@ -6,7 +6,9 @@ import javax.validation.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import com.marcelosantos.cursomc.domain.Cliente;
+import com.marcelosantos.cursomc.services.validation.ClienteUpdate;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
