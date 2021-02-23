@@ -74,11 +74,11 @@ public class Produto  implements Serializable{
 		this.nome = nome;
 	}
 
-	public Double getPreço() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreço(Double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 

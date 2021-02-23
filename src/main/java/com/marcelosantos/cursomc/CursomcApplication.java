@@ -69,17 +69,17 @@ public class CursomcApplication implements CommandLineRunner{
 		Categoria cat6 = new Categoria(null, "Decoração");
 		Categoria cat7 = new Categoria(null, "Perfumaria");			
 		
-		Produto p1 = new Produto(null, "Computador", 2000.00);
-		Produto p2 = new Produto(null, "Impressora", 800.00);
-		Produto p3 = new Produto(null, "Mouse", 80.00);		
-		Produto p4 = new Produto(null, "Mesa de escritório", 300.00);
-		Produto p5 = new Produto(null, "Toalha", 50.00);
-		Produto p6 = new Produto(null, "Colcha", 300.00);
-		Produto p7 = new Produto(null, "Tv true color", 300.00);
-		Produto p8 = new Produto(null, "Roçadeira", 800.00);
-		Produto p9 = new Produto(null, "Abajur", 100.00);
-		Produto p10 = new Produto(null, "Pendente", 180.00);
-		Produto p11 = new Produto(null, "Shampoo", 90.00);
+		Produto p1 = new Produto(null, "Computador", 2000.0);
+		Produto p2 = new Produto(null, "Impressora", 800.0);
+		Produto p3 = new Produto(null, "Mouse", 80.0);		
+		Produto p4 = new Produto(null, "Mesa de escritório", 300.0);
+		Produto p5 = new Produto(null, "Toalha", 50.0);
+		Produto p6 = new Produto(null, "Colcha", 300.0);
+		Produto p7 = new Produto(null, "Tv true color", 300.0);
+		Produto p8 = new Produto(null, "Roçadeira", 800.0);
+		Produto p9 = new Produto(null, "Abajur", 100.0);
+		Produto p10 = new Produto(null, "Pendente", 180.0);
+		Produto p11 = new Produto(null, "Shampoo", 90.0);
 		
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
 		cat2.getProdutos().addAll(Arrays.asList(p2, p4));
@@ -145,9 +145,9 @@ public class CursomcApplication implements CommandLineRunner{
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
 		
-		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
-		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
-		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
+		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.0, 1, 2000.0);
+		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.0, 2, 80.0);
+		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.0, 1, 800.0);
 		
 		ped1.getItens().addAll(Arrays.asList(ip1, ip2));
 		ped2.getItens().addAll(Arrays.asList(ip3));
