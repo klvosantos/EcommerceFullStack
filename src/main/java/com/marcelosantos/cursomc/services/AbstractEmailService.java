@@ -29,3 +29,5 @@ public abstract class AbstractEmailService implements EmailService{
 	}
 
 }
+
+// Template Method: O método sendEmail()(Interface EmailService) que não foi implementado ainda, mas ja pode ser utilizado na implementação dessa classe abstrata e posterioemente por suas extensões no caso a MockEmailService
